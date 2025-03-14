@@ -1,2 +1,41 @@
 @import "tailwindcss";
-/* npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch */
+
+
+.container {
+    width: 1000px;
+    margin: 0 auto;
+  }
+  
+  @media only screen and (max-width:1200px) {
+    .container {
+      width: 90%;
+    }
+  }
+  
+  @media only screen and (max-width:992px) {
+    .container {
+      width: 95%;
+    }
+  }
+  
+  @media only screen and (max-width:768px) {
+    .container {
+      width: 100%;
+    }
+  }
+  
+  @media only screen and (max-width:390px) {
+    .container {
+      width: 100%;
+    }
+
+    article{
+      width: 100%;
+    }
+  }
+  
+  @media(max-width: 768px) {
+    .container {
+      padding: 0 10px;
+    }
+  }

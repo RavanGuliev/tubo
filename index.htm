@@ -1,76 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Turbo Tommy</title>
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="src/input.css">
-    <link rel="stylesheet" href="src/output.css"  />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="src/output.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <body>
-    <header class="flex  w-full flex-col  bg-[#f6f7fa] ">
-    <div class="flex flex-row items-center justify-between w-[1200px] mx-auto px-[20px] h-[60px] text-[#8d94ad]   ">
-        <div class="flex flex-row gap-[20px]">
-            <span class="hover:text-red-500">Tap.az</span>
-            <span class="hover:text-red-500">Bina.az</span>
-            <span class="hover:text-red-500">Boss.az</span>
+    <header class="flex   flex-col  bg-[#f6f7fa]  w-full  ">
+        <div class="flex flex-row items-center justify-evenly w-full mx-auto px-[30px] h-[40px] text-[#8d94ad]   ">
+            <div class="flex flex-row gap-[20px]">
+                <span class="hover:text-red-500">Tap.az</span>
+                <span class="hover:text-red-500">Bina.az</span>
+                <span class="hover:text-red-500">Boss.az</span>
+            </div>
+            <div class="flex flex-row gap-[25px]">
+                Destek:<span class="hover:text-red-500">(012) 526-47-47</span>
+                <span class="hover:text-red-500">Yardim</span>
+                <span class="hover:text-red-500">Ru</span>
+                <span onclick="likedBaskets()"  class="hover:text-red-500 cursor-pointer"><i class="fa-solid fa-heart"></i> Secilmisler</span>
+                <span class="hover:text-red-500"><i class="fa-solid fa-circle-user"></i> Giris</span>
+            </div>
         </div>
-        <div class="flex flex-row gap-[25px]"> 
-            Destek:<span class="hover:text-red-500" >(012) 526-47-47</span>
-            <span class="hover:text-red-500">Yardim</span>
-            <span class="hover:text-red-500">Ru</span>
-            <span class="hover:text-red-500"><i class="fa-solid fa-heart"></i>  Secilmisler</span>
-            <span class="hover:text-red-500"><i class="fa-solid fa-circle-user"></i>  Giris</span>
+
+
+            <div id="likedbar"  class="hidden bg-[#cecece]    absolute w-[500px] h-[100vh] p-3 right-0  shadow-xl   z-[1000] ">
+                <div class=" flex justify-around items-center gap-3 p-3">
+                    <p class="font-bold  text-2xl  text-[#fff] p-3  bg-indigo-500 shadow-lg shadow-indigo-500/50 ">Seçilmişlər</p>
+                    <!-- <button onclick="" class="bg-[#b80d16] text-[white] rounded-[7px] p-[10px] cursor-pointer hover:bg-[#b80d18] hover:">Delete All</button> -->
+                    <button onclick="closebaskets()" class=" text-[#000] text-2xl  cursor-pointer   hover:bg-[#615fff] hover p-3"><i class="fa-solid fa-x"></i></button>
+                  </div>
+                  <div id="likedCard" ></div>
+            </div>
+
+        
+
+        <nav class="p-3  bg-[#ca1016]">
+            <div class="container flex justify-around h-10 mx-auto">
+                <div class="flex">
+                    <a rel="noopener noreferrer" href="#" aria-label="Back to homepage" class="flex items-center ">
+
+                        <a href="" class="font-bold text-2xl text-[#fff]">TURBO AZ</a>
+                    </a>
+                    <ul class="items-stretch flex ">
+                        <li class="flex">
+                            <a rel="noopener noreferrer" href="#"
+                                class="flex items-center px-5 dark:border- text-[#fff]">Butun Elanler</a>
+                        </li>
+                        <li class="flex">
+                            <a rel="noopener noreferrer" href="#"
+                                class="flex items-center px-2 dark:border- text-[#fff] ">Dilerler</a>
+                        </li>
+                        <li class="flex">
+                            <a rel="noopener noreferrer" href="#"
+                                class="flex items-center px-2 dark:border- text-[#fff]">Avtokatalog</a>
+                        </li>
+                        <li class="flex">
+                            <a rel="noopener noreferrer" href="#"
+                                class="flex items-center px-2  dark:border- text-[#fff]">Moto</a>
+                        </li>
+
+                        <li class="flex">
+                            <a rel="noopener noreferrer" href="#"
+                                class="flex items-center px-2  dark:border- text-[#fff]">Ehtiyat hisseleri ve
+                                aksesuarlar</a>
+                        </li>
+
+                        <li class="flex">
+                            <a rel="noopener noreferrer" href="#"
+                                class="flex items-center px-2  dark:border- text-[#fff]">Icare</a>
+                        </li>
+
+
+                    </ul>
+                </div>
+                <div class="items-center flex-shrink-0  flex">
+                    <button
+                        class="px-3 py-2 font-semibold    bg-[#85c01f] border-0  text-[#fff] hover:bg-[rgb(133,192,31)] rounded-[10px]"><a
+                            href=""><i class="fa-solid fa-circle-plus"></i><span> Yeni Elan</span></a></button>
+                </div>
+
+
+            </div>
+        </nav>
+
+
+      
+
+
+    </header>
+
+    <div class="container bg-[#ebedf3]">
+
+        <div>
+            <div class="bg-[#ebedf3] flex gap-[20px] pt-3  mx-auto  justify-center px-2">
+                <select  id="marka" name="brand"  onchange="filtirleme(this)" class="w-[235px] h-[50px] bg-[#fff] rounded-[8px]   ">
+                    <option value="Marka">Marka</option>
+                </select>
+                <select id="model" onchange="filtirleme(this)" name="model"  class="w-[235px] h-[50px] bg-[#fff] rounded-[8px] ">
+                    <option value="Model">Model</option>
+                </select>
+                <div class="  border-[#dfe3e9]  grid grid-cols-3 divide-x-2 divide-[#dfe3e9] text-center  ">
+
+                    <button  class="bg-[#ca1016] p-2 rounded-l-[10px] text-[#fff] cursor-pointer">Hamisi</button>
+                    <button class="bg-[#fff] p-2   hover:bg-[#ca1016] hover:text-[#fff] cursor-pointer">Yeni</button>
+                    <button
+                        class="bg-[#fff] p-2   hover:bg-[#ca1016] hover:text-[#fff] mx-auto rounded-r-[10px]">Surulmus</button>
+                </div>
+
+
+                <select id="city" onchange="filtirleme(this)" name="city"  class="w-[194px] h-[50px] bg-[#fff] rounded-[8px] ">
+                    <option value="seher">Şəhər</option>
+                </select>
+            </div>
+
+            <div id="maintwo" class="flex    mx-auto pl-4 pb-2 ">
+                <div class="flex pt-2 ">
+                    <input type="text" placeholder="Qiymət, min."
+                        class="bg-[#fff]  rounded-l-[8px]   text-center  w-[120px] h-[50px]">
+                    <input type="text" placeholder="maks."
+                        class="bg-[#fff] border-none rounded-r-[8px]  border-l-[#dfe3e9] text-center w-[112px] h-[50px] ">
+
+                    <div class=" flex gap-[17px] pl-5">
+                        <select id="val" onchange="filtirleme(this)" name="currency" class="bg-[#fff] rounded-[8px] w-[82px] text-[center]">
+                            <option>AZN</option>
+                        </select>
+                        <button class="bg-[#fff] rounded-[8px]  w-[60px] hover:bg-gray-300">Kredit</button>
+                        <button class="bg-[#fff] rounded-[8px] w-[60px] hover:bg-gray-300">Barter</button>
+                    </div>
+
+                    <div class="pl-6">
+                        <select  id="banType" onchange="filtirleme(this)" name="banType"
+                            class="w-[246px] bg-[#fff] h-[50px] rounded-[8px] ">
+                            <option>Ban Novu</option>
+                        </select>
+                    </div>
+
+                    <div class="flex pl-4">
+                        <select id="il"  onchange="filtirleme(this)" name="year"
+                            class="w-[97px] bg-[#fff] h-[50px] rounded-l-[8px] text-[14px]">
+                            <option>İL, min.</option>
+                        </select>
+                        <select id="maxs" onchange="filtirleme(this)" name="year"
+                            class="w-[99px] bg-[#fff] h-[50px] rounded-r-[8px]  text-[14px]">
+                            <option>maks.</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div id="mainthree" class="flex justify-between p-5">
+
+                <p class="inline-block pt-3">Bu gun: <span><a href="#" class="inline-block text-[#4c88f9]"> 2016 yeni
+                            elan</a></span></p>
+
+                <div class="flex items-center gap-[20px]">
+                    <a href=" " class="text-[#8d96b0]">Sıfırla</a>
+                    <p class="inline-block text-[#ca1016]">Daha cox filtr <i class="fa-solid fa-angle-down"></i></p>
+                    <button
+                        class=" w-[170px] h-[50px]  font-semibold    bg-[#ca1016] border-0  text-[#fff] hover:bg-[#b80d16] rounded-[7px]"><a
+                            href="">Elanları göstər</a></button>
+
+                </div>
+            </div>
         </div>
     </div>
 
-    
-        <nav class="p-4 dark:bg-gray-100 dark:text-gray-800 bg-[#ca1016]">
-            <div class="container flex justify-around h-1 mx-auto">
-                <div class="flex">
-                    <a rel="noopener noreferrer" href="#" aria-label="Back to homepage" class="flex items-center p-2">
-                        <h1 class="font-bold text-xl text-[#fff]">TURBO.AZ</h1>
-                    </a>
-                    <ul class="items-stretch hidden space-x-3 lg:flex">
-                        <li class="flex">
-                            <a rel="noopener noreferrer" href="#" class="flex items-center px-4 -mb-1 dark:border- text-[#fff]">Butun Elanler</a>
-                        </li>
-                        <li class="flex">
-                            <a rel="noopener noreferrer" href="#" class="flex items-center px-4 -mb-1 dark:border- text-[#fff] dark:text-violet-600 dark:border-violet-600">Dilerler</a>
-                        </li>
-                        <li class="flex">
-                            <a rel="noopener noreferrer" href="#" class="flex items-center px-4 -mb-1 dark:border- text-[#fff]">Avtokatalog</a>
-                        </li>
-                        <li class="flex">
-                            <a rel="noopener noreferrer" href="#" class="flex items-center px-4 -mb-1 dark:border- text-[#fff]">Moto</a>
-                        </li>
 
-                        <li class="flex">
-                            <a rel="noopener noreferrer" href="#" class="flex items-center px-4 -mb-1 dark:border- text-[#fff]">Ehtiyat hisseleri ve aksesuarlar</a>
-                        </li>
+    <main class="container bg-[#f1f3f7]  ">
+        <div class="bg-[#f1f3f7] border-t-1 border-b-1 border-[#eaebf2] px-5 py-5 font-bold text-[16px]">
+            <h1>PREMIUM ELANLAR</h1>
+        </div>
 
-                        <li class="flex">
-                            <a rel="noopener noreferrer" href="#" class="flex items-center px-4 -mb-1 dark:border- text-[#fff]">Icare</a>
-                        </li>
+        <div id="masinlar" class="container mt-1  flex flex-wrap justify-center items-center gap-5 bg-[#f6f7fa] mx-auto "></div>
 
-                       
-                    </ul>
-                </div>
-                <div class="items-center flex-shrink-0 hidden lg:flex">
-                    <button class="px-8 py-3 font-semibold rounded  bg-[#85c01f] border-0  text-[#fff] hover:bg-[rgb(133,192,31)]"> <a href="">⨭ Yeni Elan</a></button>
-                </div>
-                <button class="p-4 lg:hidden">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 dark:text-gray-800">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
-            </div>
-        </nav>
-    
-       
-    </header>
+        <div class="text-center py-3.5">
+            <button id="btn" onclick="artirmag()" 
+                class="  w-[170px] h-[50px]  font-semibold    bg-[#85c01f] border-0  text-[#fff]  rounded-[7px] flex items-center justify-center ">
+                artir
+            </button>
+        </div>
+    </main>
 
-   
+
+    <script src="js/data.js"></script>
+    <script src="js/index.js"></script>
+
 </body>
+
 </html>
