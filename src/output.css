@@ -2517,14 +2517,34 @@
       }
     }
   }
+  .sm\:w-60 {
+    @media (width >= 40rem) {
+      width: calc(var(--spacing) * 60);
+    }
+  }
   .sm\:max-w-sm {
     @media (width >= 40rem) {
       max-width: var(--container-sm);
     }
   }
+  .dark\:bg-gray-50 {
+    @media (prefers-color-scheme: dark) {
+      background-color: var(--color-gray-50);
+    }
+  }
   .dark\:bg-gray-500 {
     @media (prefers-color-scheme: dark) {
       background-color: var(--color-gray-500);
+    }
+  }
+  .dark\:text-gray-600 {
+    @media (prefers-color-scheme: dark) {
+      color: var(--color-gray-600);
+    }
+  }
+  .dark\:text-gray-800 {
+    @media (prefers-color-scheme: dark) {
+      color: var(--color-gray-800);
     }
   }
 }
