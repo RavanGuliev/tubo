@@ -28,24 +28,8 @@ const ilx = Array.from(new Set(data.map(item => item.year))).sort();
 
 
 let basket = [
-    {
-        "brand": "Abarth",
-        "model": "Seltos",
-        "banType": "Offroader / SUV",
-        "odometer": 30000,
-        "odometerUnit": "km",
-        "price": 44000,
-        "currency": "AZN",
-        "year": "2005",
-        "engine": 1.5,
-        "images": [
-          "https://turbo.azstatic.com/uploads/f710x568/2023%2F01%2F11%2F11%2F19%2F41%2F5f34c8eb-5138-4d0c-b78e-8c817d98aa5f%2F52522_Mu2ZZs1LqQkRDJpgK-R_xw.jpg"
-        ],
-        "city": "Bakı",
-        "dates": "Bu gün  14:30",
-        "id": 1,
-        "count": 1
-      },
+    
+       
 ]
 
 let count = 9;
@@ -57,10 +41,13 @@ function show() {
         .slice(0, 9)
         .map(item => {
             masinlar.innerHTML += `
-                
-                         <div class="w-[300px]  h-[400px] bg-white rounded-[10px] relative overflow-hidden shadow-[0_0_15px_#ccc] mx-auto  ">
+                    <a href="./../pages/details.htm?id=${item.id}&name=${item.brand}">
+                             <div 
+                            onclick="showDetail()"
+                            
+                         class="w-[300px]  h-[400px] bg-white rounded-[10px] relative overflow-hidden shadow-[0_0_15px_#ccc] mx-auto  ">
                             <div class="w-[300px]  h-[50%]">
-                           <i onclick="addToBasket(${item.id})" class="fa-solid fa-bookmark  text-[#fff] text-2xl  absolute right-2 top-2"></i> 
+                           <i onclick="addToBasket(event,${item.id})" id="favorite" class="fa-regular fa-bookmark  text-${item.status ? '[red]': 'white'} text-2xl  absolute right-2 top-2"></i> 
                             <img src="${item.images[0]}" alt="" class="object-cover object-center  rounded-t-md w-full  h-[100%] dark:bg-gray-500">
                             </div>
                         <div class="flex flex-col justify-between p-6 space-y-8">
@@ -74,6 +61,9 @@ function show() {
                         </div>
                     </div>
     
+                    
+                 
+                        
 
                 
                        
@@ -119,6 +109,9 @@ function artirmag() {
     show()
 }
 
+    
+
+ 
 
 function showBasket(){
     likedCard.innerHTML = '';
@@ -158,8 +151,12 @@ showBasket()
        }
 
 
-   function addToBasket(id){
+   function addToBasket(e,id){
+    e.preventDefulat(f)
+    
             const element = data.find(item => item.id == id)
+            element.status = true
+
             const yoxla = basket.find(elem => elem.id == id)
 
             if (yoxla == undefined) {
@@ -170,7 +167,7 @@ showBasket()
               }
             
             
-            
+              show()
               showBasket()
           
    }
@@ -178,6 +175,8 @@ showBasket()
    function basketdenSil(id) {
     
     basket = basket.filter(item => item.id != id);
+    data.find(item => item.id == id).status = false
+    show()
     showBasket()
   }
 

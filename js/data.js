@@ -829,6 +829,8 @@
   const obj = {
     ...item,
     id: i+1 ,
+
+    status: false
   };
 
   return obj
